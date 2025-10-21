@@ -1,0 +1,7 @@
+<main>
+    <app-header></app-header>
+    <section>Refeições</section>
+    @for (meal of diet.meals; track $index) {
+        <app-meal></app-meal>
+    }
+</main>
