@@ -1,1 +1,9 @@
-<h3>Refeição</h3>
+<header>
+    <h2>{{meal.name}}</h2>
+    <span></span>
+</header>
+<section class="content">
+    @for(item of meal.items; track $index) {
+        <p>{{item.name}}</p>
+    }
+</section>

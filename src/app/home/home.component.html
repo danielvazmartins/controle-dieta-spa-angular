@@ -1,7 +1,8 @@
 <main>
     <app-header></app-header>
-    <section>Refeições</section>
-    @for (meal of diet.meals; track $index) {
-        <app-meal></app-meal>
+    <section class="content">
+        @for (meal of diet.meals; track $index) {
+        <app-meal [meal]=meal></app-meal>
     }
+    </section>
 </main>
