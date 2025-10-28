@@ -23,10 +23,10 @@ jobs:
       - name: Build project
         run: npm run build --prod
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
+  #deploy:
+  #  needs: build
+  #  runs-on: ubuntu-latest
+  #  steps:
   #    - name: Checkout repository
   #      uses: actions/checkout@v4
 
