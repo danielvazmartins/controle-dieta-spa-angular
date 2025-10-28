@@ -23,10 +23,10 @@ jobs:
       - name: Build project
         run: npm run build --prod
 
-  #deploy:
-  #  needs: build
-  #  runs-on: ubuntu-latest
-  #  steps:
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
   #    - name: Checkout repository
   #      uses: actions/checkout@v4
 
@@ -38,4 +38,4 @@ jobs:
           aws-region: us-east-1
       
       - name: Sync to S3
-        run: aws s3 sync dist/controle-dieta-spa-angular s3://danielvazmartins-controle-dieta --delete
+        run: aws s3 sync dist/controle-dieta-spa-angular/browser s3://danielvazmartins-controle-dieta --delete
