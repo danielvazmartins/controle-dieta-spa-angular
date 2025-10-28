@@ -30,12 +30,15 @@ jobs:
           path: dist/controle-dieta-spa-angular/browser
           retention-days: 1
 
-  #deploy:
-  #  needs: build
-  #  runs-on: ubuntu-latest
-  #  steps:
-  #    - name: Checkout repository
-  #      uses: actions/checkout@v4
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download build artifacts
+        uses: actions/download-artifact@v5
+        with:
+          name: angular-controle-dieta-build
+          path: dist
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v3
@@ -45,4 +48,4 @@ jobs:
           aws-region: us-east-1
       
       - name: Sync to S3
-        run: aws s3 sync dist/controle-dieta-spa-angular/browser s3://danielvazmartins-controle-dieta --delete
+        run: aws s3 sync dist s3://danielvazmartins-controle-dieta --delete
