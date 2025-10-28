@@ -1,59 +1,45 @@
-# ControleDietaSpaAngular
+# Controle de Dieta - Spa Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.6.
+Projeto para visualização de dietas.
 
-## Development server
+## O que é
+Aplicação SPA em Angular que exibe refeições e itens de dieta a partir de mocks locais. Inclui pipeline de CI/CD para deploy em bucket S3 (GitHub Actions).
+É um projeto que estou utilizando para estudo, aplicando boas práticas e ao mesmo tempo, fazendo algo que eu possa utilizar.
 
-To start a local development server, run:
+## Tecnologias
+- Angular 20.x
+- TypeScript 5.x
+- Node.js v22x LTS
+- GitHub Actions (CI/CD)
+- AWS S3 (static website)
 
+## Pré-requisitos
+- Node.js
+
+## Rodando localmente
 ```bash
-ng serve
+npm install
+npm start
+# abrir http://localhost:4200
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Mocks
+Mocks da dieta: `src/app/shared/mocks/diets.mock.ts` 
 
-## Code scaffolding
+## Fonts usadas
+As fonts estão incluídas em `src/index.html`:
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- Irish Grover (Google Fonts)
+  - https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap
 
-```bash
-ng generate component component-name
-```
+- Inter (Google Fonts)
+  - ttps://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Deploy (resumo)
+- Workflow: `.github/workflows/deploy.yml`
+- Secrets necessários: `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_REGION`, `S3_BUCKET`
+- Recomendação: usar `aws s3 sync` e controlar cache (assets com long cache; `index.html` sem cache). Use `actions/upload-artifact` + `download-artifact` se separar build/deploy em jobs.
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Arquivos relevantes
+- `src/index.html` — imports de fonts e root
+- `src/app/shared/mocks/diets.mock.ts` — mock da dieta
