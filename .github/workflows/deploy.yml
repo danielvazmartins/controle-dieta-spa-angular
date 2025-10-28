@@ -17,11 +17,18 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Install dependencies
+      - name: Install Node dependencies
         run: npm ci
 
-      - name: Build project
+      - name: Build Angular App
         run: npm run build --prod
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: angular-controle-dieta-build
+          path: dist/controle-dieta-spa-angular/browser
+          retention-days: 1
 
   #deploy:
   #  needs: build
