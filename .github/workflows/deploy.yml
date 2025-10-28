@@ -24,7 +24,7 @@ jobs:
         run: npm run build --prod
 
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v5
         with:
           name: angular-controle-dieta-build
           path: dist/controle-dieta-spa-angular/browser
