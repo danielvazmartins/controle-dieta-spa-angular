@@ -8,9 +8,24 @@
     header {
         padding: 16px;
         background-color: #FAB015;
+
+        .subtitle {
+            font-family: "Cookie", cursive;
+            font-size: 32px;
+            font-weight: 400;
+            font-style: normal;
+            color: #ae1217;
+        }
     }
 
     .content {
         padding: 16px;
+
+        .tb-items {
+            .qtd {
+                text-align: center;
+                padding-right: 5px;
+            }
+        }
     }
 }

@@ -26,7 +26,7 @@ npm start
 ## Mocks
 Mocks da dieta: `src/app/shared/mocks/diets.mock.ts` 
 
-## Fonts usadas
+## Fonts utilizadas
 As fonts estão incluídas em `src/index.html`:
 
 - Irish Grover (Google Fonts)
