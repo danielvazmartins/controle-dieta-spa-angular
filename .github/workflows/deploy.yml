@@ -48,4 +48,4 @@ jobs:
           aws-region: us-east-1
       
       - name: Sync to S3
-        run: aws s3 sync dist s3://bucket-danielvazmartins-controle-dieta --delete
+        run: aws s3 sync dist s3://controle-dieta-spa-angular --delete
