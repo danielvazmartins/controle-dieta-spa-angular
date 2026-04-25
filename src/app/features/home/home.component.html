@@ -2,7 +2,8 @@
     <app-header></app-header>
     <section class="content">
         @for (meal of diet.meals; track $index) {
-        <app-meal [meal]=meal></app-meal>
-    }
+            <app-meal [meal]=meal></app-meal>
+        }
+        <app-total></app-total>
     </section>
 </main>

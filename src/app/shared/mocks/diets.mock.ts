@@ -16,7 +16,8 @@ export const DIETS_MOCK = [
                     { name: 'Cacau em pó 100%', quantity: '10g' },
                     { name: 'Psyllium', quantity: '10g' },
                     { name: 'Leite desnatado', quantity: '200ml' }
-                ]
+                ],
+                carolies: 600
             }, {
                 id: 2,
                 name: 'Almoço',
@@ -27,7 +28,8 @@ export const DIETS_MOCK = [
                     { name: 'Azeite de oliva extra virgem', quantity: '5ml' },
                     { name: 'Legumes', quantity: '200g' },
                     { name: 'Maça', quantity: '120g' }
-                ]
+                ],
+                carolies: 600
             }, {
                 id: 3,
                 name: 'Lanche da Tarde',
@@ -35,7 +37,8 @@ export const DIETS_MOCK = [
                     { name: 'Frango desfiado', quantity: '180g' },
                     { name: 'Ovos grandes', quantity: '3un' },
                     { name: 'Tapioca', quantity: '70g' }
-                ]
+                ],
+                carolies: 600
             }, {
                 id: 4,
                 name: 'Pré Treino',
@@ -44,7 +47,8 @@ export const DIETS_MOCK = [
                     { name: 'Leite em pó desnatado', quantity: '15g' },
                     { name: 'Proteina de Soja', quantity: '20g' },
                     { name: 'Uva Passa', quantity: '20g' }
-                ]
+                ],
+                carolies: 600
             }, {
                 id: 5,
                 name: 'Jantar',
@@ -54,8 +58,12 @@ export const DIETS_MOCK = [
                     { name: 'Feijão', quantity: '100g' },
                     { name: 'Legumes', quantity: '200g' },
                     { name: 'Maça', quantity: '120g' }
-                ]
+                ],
+                carolies: 600
             }
-        ]
+        ],
+        total: {
+            calories: 3000
+        }
     } 
 ]

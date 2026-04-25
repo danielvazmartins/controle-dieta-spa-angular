@@ -2,8 +2,9 @@ import { Component, OnInit } from "@angular/core";
 import { CommonModule } from "@angular/common";
 
 import { HeaderComponent } from "./header/header.component";
-import { DietService } from "../shared/services/diet.service";
+import { DietService } from "@shared/services/diet.service";
 import { MealComponent } from "./meal/meal.component";
+import { TotalComponent } from "./total/total.component";
 
 @Component({
   selector: "app-home",
@@ -13,7 +14,8 @@ import { MealComponent } from "./meal/meal.component";
   imports: [
     CommonModule,
     HeaderComponent,
-    MealComponent
+    MealComponent,
+    TotalComponent
 ]
 })
 export class HomeComponent implements OnInit{

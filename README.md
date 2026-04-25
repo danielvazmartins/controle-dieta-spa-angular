@@ -2,11 +2,11 @@
 
 Projeto para visualização de dietas.
 
-## O que é
+## O que é? ❓
 Aplicação SPA em Angular que exibe refeições e itens de dieta a partir de mocks locais. Inclui pipeline de CI/CD para deploy em bucket S3 (GitHub Actions).
 É um projeto que estou utilizando para estudo, aplicando boas práticas e ao mesmo tempo, fazendo algo que eu possa utilizar.
 
-## Tecnologias
+## Tecnologias utilizadas 🚀
 - Angular 20.x
 - TypeScript 5.x
 - Node.js v22x LTS
