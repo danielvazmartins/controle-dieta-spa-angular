@@ -1,4 +1,25 @@
 <section class="login-screen">
   <h1>Login</h1>
-  <p>Página de login em desenvolvimento.</p>
+
+  <!-- Exibir usuário autenticado -->
+  <div *ngIf="currentUserEmail" class="user-info">
+    <p>Usuário autenticado: {{ currentUserEmail }}</p>
+    <button (click)="logout()" class="logout-btn">Sair</button>
+  </div>
+
+  <!-- Mostrar erros -->
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <!-- Botão de Google Sign-In -->
+  <div *ngIf="!currentUserEmail" class="google-signin">
+    <p>Faça login com sua conta do Google:</p>
+    <div #googleSignInButton></div>
+  </div>
+
+  <!-- Loading indicator -->
+  <div *ngIf="isLoading" class="loading">
+    Autenticando...
+  </div>
 </section>
