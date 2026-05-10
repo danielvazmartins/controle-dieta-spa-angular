@@ -29,6 +29,8 @@
 - Mantenha componentes e estilos auto-contidos.
 - Preserve import paths ao renomear ou mover arquivos.
 - Este projeto é um frontend SPA e terá um backend em outro repositório.
+- Sempre utilizar @if para controle de exibição condicional ao inves de *ngIf.
+- Sempre utilizar @for para iteração em listas ao invés de *ngFor.
 
 ## Especificações / Spec Kit
 - O repositório já contém `.specify/` com templates e workflows.

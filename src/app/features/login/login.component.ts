@@ -1,23 +1,25 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AuthService } from '../../shared/services/auth.service';
 import { Router } from '@angular/router';
+import { AuthService } from '@shared/services/auth.service';
 
 declare var google: any;
 
 @Component({
   selector: 'app-login',
-  imports: [CommonModule],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  styleUrl: './login.component.scss',
+  imports: [
+    CommonModule
+  ],
 })
 export class LoginComponent implements OnInit, AfterViewInit {
   @ViewChild('googleSignInButton') googleSignInButton!: ElementRef;
 
   currentUserEmail: string | null = null;
-  isLoading = false;
-  errorMessage = '';
-  private readonly clientId = '456386597094-m6dislqvgkljsfh6cq3cjtha7njvvarm.apps.googleusercontent.com';
+  isLoading: boolean = false;
+  errorMessage: string = '';
+  private readonly clientId: string = '456386597094-m6dislqvgkljsfh6cq3cjtha7njvvarm.apps.googleusercontent.com';
 
   constructor(
     private authService: AuthService,
@@ -30,6 +32,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
       const user = this.authService.getCurrentUser();
       if (user) {
         this.currentUserEmail = user.email;
+        this.router.navigate(['/']);
       }
     }
 
@@ -77,9 +80,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
         console.log('Usuário autenticado:', user.email);
         
         // Redirecionar para home após sucesso
-        setTimeout(() => {
-          this.router.navigate(['/home']);
-        }, 500);
+        this.router.navigate(['/']);
       }
     } catch (error) {
       this.errorMessage = 'Erro ao fazer login com Google. Tente novamente.';

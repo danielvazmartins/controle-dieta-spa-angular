@@ -6,7 +6,9 @@ import { DIETS_MOCK } from "../mocks/diets.mock";
   providedIn: 'root'
 })
 export class DietService {
-    getDiet(dietId: number) {
-        return DIETS_MOCK.find(diet => diet.id === dietId);
+
+    getDietByUser(userName: string) {
+        const userDiets = DIETS_MOCK.find(diet => diet.user === userName)?.diets;
+        return userDiets?.find(diet => diet.id === 1) || null;
     }
 }

@@ -1,25 +1,26 @@
-<section class="login-screen">
-  <h1>Login</h1>
+<div class="login-wrapper">
+  <div class="login-card">
+    <header class="brand">
+      <h1 class="logo">NutriFlow</h1>
+      <p class="tagline">Seu plano alimentar, sempre com você.</p>
+    </header>
 
-  <!-- Exibir usuário autenticado -->
-  <div *ngIf="currentUserEmail" class="user-info">
-    <p>Usuário autenticado: {{ currentUserEmail }}</p>
-    <button (click)="logout()" class="logout-btn">Sair</button>
-  </div>
+    <div class="auth-section">
+      <div #googleSignInButton class="google-btn"></div>
+      <p class="helper-text">Utilize sua conta Google para acessar sua dieta personalizada.</p>
+    </div>
 
-  <!-- Mostrar erros -->
-  <div *ngIf="errorMessage" class="error-message">
-    {{ errorMessage }}
-  </div>
+    @if (isLoading) {
+      <div class="loading-overlay">
+        <div class="spinner"></div>
+        <span>Entrando...</span>
+      </div>
+    }
 
-  <!-- Botão de Google Sign-In -->
-  <div *ngIf="!currentUserEmail" class="google-signin">
-    <p>Faça login com sua conta do Google:</p>
-    <div #googleSignInButton></div>
+    @if (errorMessage) {
+      <div class="error-message">
+        {{ errorMessage }}
+      </div>
+    }
   </div>
-
-  <!-- Loading indicator -->
-  <div *ngIf="isLoading" class="loading">
-    Autenticando...
-  </div>
-</section>
+</div>
