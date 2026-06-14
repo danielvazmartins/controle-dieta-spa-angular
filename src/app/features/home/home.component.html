@@ -4,6 +4,6 @@
         @for (meal of diet.meals; track $index) {
             <app-meal [meal]=meal></app-meal>
         }
-        <app-total></app-total>
+        <app-total [total]="diet.total"></app-total>
     </section>
 </main>

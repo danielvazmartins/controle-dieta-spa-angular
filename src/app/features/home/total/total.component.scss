@@ -1,5 +1,7 @@
 :host {
     .content {
+        display: flex;
+        justify-content: space-between;
         padding: 16px;
         background-color: #FAB015;
         border-radius: 16px;
