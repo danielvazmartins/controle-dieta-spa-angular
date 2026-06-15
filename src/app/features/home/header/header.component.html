@@ -1,4 +1,19 @@
 <header>
     <h1 class="title">Dieta de Bulking</h1>
     <h2 class="subtitle">Daniel Vaz Villalobos Martins</h2>
+    <button class="bt-menu" (click)="clickMenu()" aria-label="Abrir menu">
+        <span class="material-symbols-outlined">menu</span>
+    </button>
 </header>
+
+<!-- Menu Lateral -->
+<div class="menu-container" [class.open]="isMenuOpen">
+    <div class="overlay" (click)="clickMenu()"></div>
+    <nav class="side-menu">
+        <ul class="menu-list">
+            <li><a href="#">Minha Dieta</a></li>
+            <li><a href="#">Configurações</a></li>
+            <li><a href="#" (click)="logout()">Sair</a></li>
+        </ul>
+    </nav>
+</div>

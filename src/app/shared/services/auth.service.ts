@@ -66,7 +66,7 @@ export class AuthService {
     this.userSubject.next(null);
     localStorage.removeItem('currentUser');
     if (google?.accounts?.id) {
-      google.accounts.id.disableAutoCallback();
+      google.accounts.id.disableAutoSelect();
     }
   }
 
