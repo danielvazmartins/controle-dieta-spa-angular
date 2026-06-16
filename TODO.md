@@ -19,6 +19,7 @@
 - [ ] Melhoria 1
 - [ ] Melhoria 2
 - [ ] Melhoria 3
+- [ ] Limpar o cache do CloudFront após o deploy
 
 ### 📚 Documentação
 
